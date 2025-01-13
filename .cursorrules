@@ -1,91 +1,114 @@
 {
     "rules": {
+"code_execution": {
+  "description": "Protocol for code execution and verification",
+  "priority": "critical",
+  "runtime": "python3",
+  "steps": [
+    "Execute all Python code using Python 3",
+    "Run all generated code immediately after writing using 'python3' command",
+    "Execute in the actual project environment, not simulated",
+    "Capture and analyze all outputs and errors",
+    "Test edge cases and error conditions",
+    "Fix any issues before proceeding",
+    "Document all test results and fixes",
+    "Only declare completion after successful execution"
+  ]
+}
+,
+        "verification_requirements": [
+          "All code must execute without errors",
+          "All specified functionality must work as intended",
+          "Edge cases must be handled appropriately",
+          "Performance meets expected standards",
+          "No warnings or deprecation notices"
+        ]
+      },
       "documentation_reference": {
         "description": "Protocol for referencing documentation",
+        "priority": "highest",
         "steps": [
-          "Before starting any task, review the relevant documentation in the project",
-          "Refer to the documentation files located in the 'docs' folder",
-          "Use the information from these documents to inform code generation and decision-making"
+          "Before starting any task, review the relevant documentation",
+          "Verify current API versions and compatibility",
+          "Reference official documentation for all libraries and frameworks",
+          "Check for deprecated features or breaking changes",
+          "Document version-specific requirements",
+          "Maintain links to referenced documentation"
         ]
       },
-      "context_initialization": {
-        "description": "Starting point for each interaction",
+      "task_breakdown": {
+        "description": "Breaking down complex tasks",
+        "priority": "high",
         "steps": [
-          "State the current goal and overall project context",
-          "Briefly recap progress made so far",
-          "Explain the reasoning behind the next planned action",
-          "Reference relevant project documentation"
-        ]
-      },
-      "operational_protocol": {
-        "description": "How to approach tasks",
-        "before_action": [
-          "Review relevant project documentation",
-          "Explain how the next step aligns with the overall goal",
-          "Describe potential impacts or consequences of the action"
-        ],
-        "after_action": [
-          "Summarize what was done and why",
-          "Evaluate the outcome against the goal and documentation guidelines",
-          "Identify any necessary adjustments or next steps"
+          "Analyze the full scope of the task",
+          "Break down into sequential subtasks",
+          "Identify dependencies between subtasks",
+          "Prioritize subtasks based on dependencies",
+          "Execute subtasks in optimal order",
+          "Verify each subtask before proceeding"
         ]
       },
       "code_generation": {
-        "description": "Protocol for generating and testing code",
+        "description": "Protocol for generating code",
         "steps": [
-          "Review relevant documentation in the project",
-          "Write unit tests for the planned code",
-          "Generate the required code based on documentation guidelines",
-          "Run the tests automatically",
-          "If errors are found, explain and fix them",
-          "Rerun tests until all pass",
-          "Explain the final code and its functionality"
+          "Review relevant documentation",
+          "Write tests before implementation",
+          "Generate code following best practices",
+          "Include error handling",
+          "Add appropriate comments",
+          "Implement logging where necessary"
+        ]
+      },
+      "testing_protocol": {
+        "description": "Comprehensive testing requirements",
+        "steps": [
+          "Run unit tests",
+          "Perform integration testing",
+          "Test edge cases",
+          "Verify error handling",
+          "Check performance metrics",
+          "Document test results"
         ]
       },
       "error_handling": {
-        "description": "How to deal with errors or issues",
+        "description": "Managing errors and issues",
         "steps": [
-          "Identify and explain the error or issue",
-          "Consult project documentation for relevant error handling guidelines",
-          "Propose multiple solutions if applicable",
-          "Implement the most suitable solution",
-          "Verify the solution resolves the issue",
-          "Update relevant documentation or comments"
+          "Catch all potential errors",
+          "Log error details",
+          "Implement appropriate error recovery",
+          "Document error handling procedures",
+          "Test error scenarios"
         ]
       },
       "progress_tracking": {
-        "description": "Regular progress updates",
-        "frequency": "After every major task or every 30 minutes, whichever comes first",
+        "description": "Tracking task progress",
         "steps": [
-          "Summarize overall progress towards the main goal",
-          "List completed tasks and their outcomes",
-          "Identify upcoming tasks and their priorities",
-          "Highlight any potential roadblocks or concerns",
-          "Verify alignment with project documentation"
-        ]
-      },
-      "documentation_maintenance": {
-        "description": "Maintaining clear documentation",
-        "steps": [
-          "Update comments in code as changes are made",
-          "Maintain a running changelog of significant changes",
-          "Ensure README.md is up-to-date with latest project status",
-          "Suggest updates to project documentation if discrepancies are found"
+          "Log all actions taken",
+          "Record completion status",
+          "Document any issues encountered",
+          "Track time spent on tasks",
+          "Report progress regularly"
         ]
       }
     },
     "global_instructions": [
-      "Always reference the project documentation before writing code or making decisions",
-      "The documentation is located in the 'docs' folder of the project",
-      "Ensure all code adheres to the guidelines and best practices outlined in the documentation",
-      "If documentation is unclear or missing, request clarification before proceeding",
-      "Consider the broader context of the project when making decisions",
-      "Prioritize maintainability and readability in all code generation",
-      "Regularly verify alignment with the original project goals",
-      "If unsure about a decision, ask for clarification before proceeding",
-      "Proactively suggest improvements or optimizations when identified",
-      "Explain your reasoning and actions in each response",
-      "Maintain focus on the main project objectives throughout all tasks"
-    ]
+      "Never declare a task complete until code is verified working",
+      "Always run and test code before showing it to the user",
+      "Reference documentation before writing any code",
+      "Break down complex tasks into manageable subtasks",
+      "Implement comprehensive error handling",
+      "Maintain detailed logs of all actions",
+      "Follow best practices for code quality",
+      "Ensure all code is properly tested in the actual environment",
+      "Fix any issues found during testing before proceeding",
+      "Document all important decisions and changes"
+    ],
+    "execution_settings": {
+      "auto_run": true,
+      "verify_before_complete": true,
+      "test_in_actual_environment": true,
+      "log_all_actions": true,
+      "require_documentation": true
+    }
   }
   
